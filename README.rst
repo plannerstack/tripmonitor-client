@@ -21,6 +21,8 @@ Use Virtualenv_ and Pip_ to set up a development environment::
 Using the client
 ----------------
 
+.. note:: The trip monitoring interface is in development and is subject to change.
+
 The monitoring client has three functions: planning a trip, setting up a monitoring subscription and connecting to the service to receive updates.
 
 First start the monitoring service::
@@ -31,7 +33,7 @@ In another terminal, plan a trip::
 
     tripmonitor-client -u URL plan FROM TO
 
-The ``from`` and ``TO`` parameters can be in any form accepted by OpenTripPlanner_. The output contains a ``monitoring_id`` parameter that can be used to subscribe to updates for a trip::
+The ``FROM`` and ``TO`` parameters can be in any form accepted by OpenTripPlanner_. The output contains a ``monitoring_id`` parameter that can be used to subscribe to updates for a trip::
 
     tripmonitor-client -u URL subscribe MONITORING_ID
 

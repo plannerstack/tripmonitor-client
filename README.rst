@@ -14,6 +14,10 @@ Use Virtualenv_ and Pip_ to set up a development environment::
     pip install -e .
 
 
+.. _Virtualenv: http://www.virtualenv.org/
+.. _Pip: http://www.pip-installer.org/
+
+
 Using the client
 ----------------
 

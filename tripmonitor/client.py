@@ -2,10 +2,15 @@
 Client for the PlannerStack trip monitoring system.
 """
 
-import sys
+from __future__ import print_function
+
 import argparse
+from base64 import b64encode
+from ConfigParser import ConfigParser, NoSectionError
 import json
 import logging
+import os
+import sys
 
 import requests
 import websocket
@@ -14,63 +19,77 @@ import websocket
 logger = logging.getLogger(__name__)
 
 
+DEFAULT_PROFILE = 'default'
+DEFAULT_CONFIG = '~/.tripmonitorrc'
 DEFAULT_URL = 'http://localhost:8081/monitoring'
 
 
-def plan(options):
+def plan(options, config):
     """
     Plan a trip. Currently, only planning with departure time is supported.
     """
-    url = options.url + '/plan'
+    url = config['url'] + '/plan'
     params = {
         'from': options.from_location,
         'to': options.to_location,
         'time': options.time,
     }
-    r = requests.get(url, params)
+    r = requests.get(url, params=params,
+            auth=(config['username'], config['password']))
     r.raise_for_status()
-    print r.text
+    print(r.text)
 
 
-def subscribe(options):
+def subscribe(options, config):
     """
     Subscribe to trip updates.
     """
-    url = options.url + '/subscribe/%s' % options.monitoring_id
-    r = requests.post(url)
+    url = config['url'] + '/subscribe/%s' % options.monitoring_id
+    r = requests.post(url, auth=(config['username'], config['password']))
     r.raise_for_status()
-    print r.text
+    print(r.text)
 
 
-def unsubscribe(options):
+def unsubscribe(options, config):
     """
     Unsubscribe to trip updates.
     """
-    url = options.url + '/unsubscribe/%s' % options.monitoring_id
-    r = requests.post(url)
+    url = config['url'] + '/unsubscribe/%s' % options.monitoring_id
+    r = requests.post(url, auth=(config['username'], config['password']))
     r.raise_for_status()
-    print r.text
+    print(r.text)
 
 
-def monitor(options):
+def monitor(options, config):
     """
     Connect to the monitoring service and receive trip updates.
     """
-    url = options.url + '/monitor'
+    url = config['url'] + '/monitor'
     if url.startswith('http'):
         url = url.replace('http', 'ws', 1)
-    ws = websocket.create_connection(url)
+    auth_header = 'Authorization: Basic ' + \
+             b64encode(('%s:%s' % (config['username'], config['password']))
+                .encode('latin1')).strip().decode('latin1')
+    ws = websocket.create_connection(url, header=[auth_header])
     while True:
-        print ws.recv()
+        print(ws.recv())
 
 
 def parse_args(args=None):
     parser = argparse.ArgumentParser(
             description='Client for the trip monitoring system')
-    parser.add_argument('-u', '--url', metavar='URL', default=DEFAULT_URL,
-            help='monitoring URL (default: %s' % DEFAULT_URL)
+    parser.epilog ="Use %s COMMAND -h to show command help." % parser.prog
+
+    parser.add_argument('-p', '--profile', metavar='PROFILE',
+            default=DEFAULT_PROFILE,
+            help='the configuration section (default: %s)' % DEFAULT_PROFILE)
+    parser.add_argument('-c', '--config', metavar='CONFIG',
+            help='the configuration file (default: %s)' % DEFAULT_CONFIG)
+    parser.add_argument('-q', '--quiet', action='store_true',
+            help='hide informational output')
     parser.add_argument('-d', '--debug', action='store_true',
-            help='show debugging output')
+            help='show debugging output; overrides --quiet')
+
     subparsers = parser.add_subparsers(metavar='COMMAND',
             help='monitoring command')
 
@@ -104,13 +123,56 @@ def parse_args(args=None):
             help='receive trip updates')
     monitor_cmd.set_defaults(command_func=monitor)
 
-    return parser.parse_args(args)
+    options = parser.parse_args(args)
+    if options.config is None:
+        options.config = os.path.expanduser(DEFAULT_CONFIG)
+    return options
+
+def get_config(options):
+    defaults = {'url': DEFAULT_URL}
+    config = ConfigParser(defaults)
+    config.read(options.config)
+    try:
+        options = config.items(options.profile)
+    except NoSectionError:
+        if not os.path.exists(options.config):
+            fail("Configuration file does not exist: %s" % options.config)
+        sections = "\n  ".join(config.sections())
+        if sections:
+            profiles = "Available profiles:\n  %s" % sections
+        else:
+            profiles = "No profiles found"
+        fail("Configuration file '%s' contains no profile section '%s'\n%s" %
+                (options.config, options.profile, profiles))
+    return dict(options)
+
+
+def setup_logging(args):
+    if args.debug:
+        log_level = logging.DEBUG
+        httplib.HTTPConnection.debuglevel = 1
+    elif args.quiet:
+        log_level = logging.WARN
+    else:
+        log_level = logging.INFO
+
+    logging.basicConfig(format='%(message)s', level=log_level)
+
+    requests_log = logging.getLogger('requests.packages.urllib3')
+    requests_log.setLevel(logging.WARN)
+    requests_log.propagate = True
+
+
+def fail(message):
+        print(message, end='\n', file=sys.stderr)
+        sys.exit(1)
 
 
 def main():
     options = parse_args()
-    logger.setLevel(logging.DEBUG if options.debug else logging.INFO)
-    options.command_func(options)
+    setup_logging(options)
+    config = get_config(options)
+    options.command_func(options, config)
 
 
 if __name__ == '__main__':

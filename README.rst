@@ -41,7 +41,7 @@ The default location is ``~/.tripmonitorrc`` but you can change this using the `
 
 First start the monitoring service::
 
-    tripmonitor-client connect
+    tripmonitor-client monitor
 
 In another terminal, plan a trip::
 

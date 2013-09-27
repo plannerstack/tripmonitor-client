@@ -28,12 +28,14 @@ The monitoring client has three functions: planning a trip, setting up a monitor
 Settings are loaded from a configuration file. An example is shown here::
 
     [default]
-    url = http://localhost:8081/monitoring
+    url = http://localhost:8088
+    monitor_url = http://localhost:8081/monitoring
     username = develop
     password = develop
 
     [bree]
-    url = http://prancingpony.com/monitoring
+    url = http://rancingpony.com/monitoring
+    monitor_url = http://racingpony.com/monitoring
     username = underhill
     password = secret
 

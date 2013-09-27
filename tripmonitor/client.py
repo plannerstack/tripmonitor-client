@@ -29,7 +29,7 @@ def plan(options, config):
     """
     Plan a trip. Currently, only planning with departure time is supported.
     """
-    if options.time == 'now':
+    if options.time is None or options.time == 'now':
         dt = datetime.now()
     else:
         dt = parse(options.time)

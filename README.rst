@@ -29,13 +29,13 @@ Settings are loaded from a configuration file. An example is shown here::
 
     [default]
     url = http://localhost:8088
-    monitor_url = http://localhost:8081/monitoring
+    monitor_url = tcp://localhost:8081/monitoring
     username = develop
     password = develop
 
     [bree]
     url = http://rancingpony.com/monitoring
-    monitor_url = http://racingpony.com/monitoring
+    monitor_url = tcp://racingpony.com/monitoring
     username = underhill
     password = secret
 

@@ -11,28 +11,38 @@ import json
 import logging
 import os
 import sys
+import zmq
+from dateutil.parser import parse
+from datetime import datetime
 
 import requests
-import websocket
-
 
 logger = logging.getLogger(__name__)
 
 
 DEFAULT_PROFILE = 'default'
 DEFAULT_CONFIG = '~/.tripmonitorrc'
-DEFAULT_URL = 'http://localhost:8081/monitoring'
-
+DEFAULT_URL = 'http://localhost:8099'
+DEFAULT_MONITOR_URL = "tcp://localhost:8098"
 
 def plan(options, config):
     """
     Plan a trip. Currently, only planning with departure time is supported.
     """
+    if options.time == 'now':
+        dt = datetime.now()
+    else:
+        dt = parse(options.time)
     url = config['url'] + '/plan'
     params = {
-        'from': options.from_location,
-        'to': options.to_location,
-        'time': options.time,
+        'fromPlace': options.from_location,
+        'toPlace': options.to_location,
+        'time': str(dt.time()),
+        'date': str(dt.date()),
+        'arriveBy': False,
+        'showIntermediateStops': False,
+        'maxWalkDistance': 750,
+        'mode': 'TRANSIT,WALK',
     }
     r = requests.get(url, params=params,
             auth=(config['username'], config['password']))
@@ -64,16 +74,13 @@ def monitor(options, config):
     """
     Connect to the monitoring service and receive trip updates.
     """
-    url = config['url'] + '/monitor'
-    if url.startswith('http'):
-        url = url.replace('http', 'ws', 1)
-    auth_header = 'Authorization: Basic ' + \
-             b64encode(('%s:%s' % (config['username'], config['password']))
-                .encode('latin1')).strip().decode('latin1')
-    ws = websocket.create_connection(url, header=[auth_header])
+    context = zmq.Context()
+    notifications_zmq = context.socket(zmq.SUB)
+    notifications_zmq.connect(config['monitor_url'])
+    notifications_zmq.setsockopt(zmq.SUBSCRIBE, '')
     while True:
-        print(ws.recv())
-
+        notification = notifications_zmq.recv()
+        print(notification)
 
 def parse_args(args=None):
     parser = argparse.ArgumentParser(
@@ -102,7 +109,7 @@ def parse_args(args=None):
     plan_cmd.add_argument('to_location', metavar='TO',
             help='the arrival location')
     plan_cmd.add_argument('time', metavar='TIME', nargs='?',
-            help='the departure time (default: now)')
+            help='the departure time (example format: YYYYMMDDTHHMMSS; default: now)')
 
     subscribe_cmd = subparsers.add_parser('subscribe',
             description=subscribe.__doc__,
@@ -129,7 +136,7 @@ def parse_args(args=None):
     return options
 
 def get_config(options):
-    defaults = {'url': DEFAULT_URL}
+    defaults = {'url': DEFAULT_URL, 'monitor_url': DEFAULT_MONITOR_URL}
     config = ConfigParser(defaults)
     config.read(options.config)
     try:

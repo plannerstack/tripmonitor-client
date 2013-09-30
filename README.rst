@@ -17,6 +17,10 @@ Use Virtualenv_ and Pip_ to set up a development environment::
 .. _Virtualenv: http://www.virtualenv.org/
 .. _Pip: http://www.pip-installer.org/
 
+Install the client by running the following command::
+
+    python setup.py install
+
 
 Using the client
 ----------------
@@ -47,9 +51,9 @@ First start the monitoring service::
 
 In another terminal, plan a trip::
 
-    tripmonitor-client plan FROM TO
+    tripmonitor-client plan FROM TO DATETIME
 
-The ``FROM`` and ``TO`` parameters can be in any form accepted by OpenTripPlanner_. The output contains a ``monitoring_id`` parameter that can be used to subscribe to updates for a trip::
+The ``FROM`` and ``TO`` parameters can be in any form accepted by OpenTripPlanner_. The ``DATETIME`` parameter is optional. It defaults to ``now`` when nothing is specified. If you want to plan on another ``DATETIME``, please use the following format ``YYYYMMDDTHHMM`` (20130930T2100). The output contains a ``monitoring_id`` parameter that can be used to subscribe to updates for a trip::
 
     tripmonitor-client subscribe MONITORING_ID
 

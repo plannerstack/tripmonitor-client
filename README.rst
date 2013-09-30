@@ -47,7 +47,7 @@ First start the monitoring service::
     
 The updates are sent in the same format as the planning results::
   
-    An example JSON can be found in ``response_example.json``.
+    An example JSON can be found in the file response_example.json.
 
 In another terminal, plan a trip::
 
@@ -59,7 +59,7 @@ Example::
 
 Result in JSON::
     
-    An example JSON can be found in ``response_example.json``.
+    An example JSON can be found in the file response_example.json.
     
 The ``FROM`` and ``TO`` parameters can be in any form accepted by OpenTripPlanner_. The ``DATETIME`` parameter is optional. It defaults to ``now`` when nothing is specified. If you want to plan on another ``DATETIME``, please use the following format ``YYYYMMDDTHHMM`` (20130930T2100). The output contains a ``monitorId`` parameter that can be used to subscribe to updates for a trip::
 

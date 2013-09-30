@@ -1,0 +1,784 @@
+{
+    "debug": {
+        "totalTime": 317,
+        "pathCalculationTime": 305,
+        "renderingTime": 2,
+        "timedOut": false,
+        "precalculationTime": 10,
+        "pathTimes": [
+            305
+        ]
+    },
+    "plan": {
+        "date": 1380575422000,
+        "to": {
+            "arrival": null,
+            "name": "Arnhemseweg",
+            "platformCode": null,
+            "stopSequence": null,
+            "lon": 5.385457016403417,
+            "departure": null,
+            "zoneId": null,
+            "stopId": null,
+            "stopCode": null,
+            "lat": 52.15133788184729,
+            "stopIndex": null,
+            "orig": null
+        },
+        "itineraries": [
+            {
+                "walkTime": 809,
+                "fare": null,
+                "legs": [
+                    {
+                        "transitLeg": false,
+                        "realTime": false,
+                        "alightRule": null,
+                        "headsign": null,
+                        "routeLongName": null,
+                        "intermediateStops": null,
+                        "duration": 518000,
+                        "rentedBike": false,
+                        "routeShortName": null,
+                        "tripId": null,
+                        "agencyUrl": null,
+                        "routeColor": null,
+                        "alerts": [
+                            {
+                                "alertDescriptionText": null,
+                                "effectiveStartDate": null,
+                                "alertUrl": null,
+                                "alertHeaderText": {
+                                    "translations": {
+                                        "en": "inrijden vanaf Coenderstraat verboden voor auto's"
+                                    },
+                                    "someTranslation": "inrijden vanaf Coenderstraat verboden voor auto's"
+                                }
+                            }
+                        ],
+                        "routeId": null,
+                        "to": {
+                            "arrival": 1380575966000,
+                            "name": "Delft",
+                            "platformCode": "2",
+                            "stopSequence": 8,
+                            "lon": 4.3561783433,
+                            "departure": 1380575967000,
+                            "zoneId": "IFF:dt",
+                            "stopId": {
+                                "id": "54080",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 52.0065262353,
+                            "stopIndex": 7,
+                            "orig": null
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 0,
+                        "notes": [
+                            {
+                                "text": "inrijden vanaf Coenderstraat verboden voor auto's"
+                            }
+                        ],
+                        "serviceDate": null,
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": null,
+                        "departureDelay": 0,
+                        "startTime": 1380575448000,
+                        "from": {
+                            "arrival": null,
+                            "name": "Pootstraat",
+                            "platformCode": null,
+                            "stopSequence": null,
+                            "lon": 4.3506851524691585,
+                            "departure": 1380575448000,
+                            "zoneId": null,
+                            "stopId": null,
+                            "stopCode": null,
+                            "lat": 52.00509669072431,
+                            "stopIndex": null,
+                            "orig": ""
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": null,
+                        "distance": 634.7975778519042,
+                        "agencyName": null,
+                        "route": "",
+                        "tripShortName": null,
+                        "legGeometry": {
+                            "length": 25,
+                            "points": "yfl|HwvpYQe@q@mBMa@[_A_@iAm@cBIYIWCEY{@{@iCCIEK}@mCpAcBMYg@AaAUGo@b@O?CRGn@UXK",
+                            "levels": null
+                        },
+                        "steps": [
+                            {
+                                "distance": 352.97411226558876,
+                                "relativeDirection": "DEPART",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 4.3506851524691585,
+                                "stayOn": false,
+                                "absoluteDirection": "NORTHEAST",
+                                "lat": 52.00509669072431,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Pootstraat"
+                            },
+                            {
+                                "distance": 57.534304925678214,
+                                "relativeDirection": "RIGHT",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": [
+                                    {
+                                        "alertDescriptionText": null,
+                                        "effectiveStartDate": null,
+                                        "alertUrl": null,
+                                        "alertHeaderText": {
+                                            "translations": {
+                                                "en": "inrijden vanaf Coenderstraat verboden voor auto's"
+                                            },
+                                            "someTranslation": "inrijden vanaf Coenderstraat verboden voor auto's"
+                                        }
+                                    }
+                                ],
+                                "lon": 4.354873400000001,
+                                "stayOn": false,
+                                "absoluteDirection": "SOUTHEAST",
+                                "lat": 52.006948300000005,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Nieuwe Schoolstraat"
+                            },
+                            {
+                                "distance": 34.49622620080007,
+                                "relativeDirection": "LEFT",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": [
+                                    {
+                                        "alertDescriptionText": null,
+                                        "effectiveStartDate": null,
+                                        "alertUrl": null,
+                                        "alertHeaderText": {
+                                            "translations": {
+                                                "en": "inrijden vanaf Coenderstraat verboden voor auto's"
+                                            },
+                                            "someTranslation": "inrijden vanaf Coenderstraat verboden voor auto's"
+                                        }
+                                    }
+                                ],
+                                "lon": 4.3553708,
+                                "stayOn": false,
+                                "absoluteDirection": "NORTHEAST",
+                                "lat": 52.006531200000005,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Coenderstraat"
+                            },
+                            {
+                                "distance": 74.87990950836947,
+                                "relativeDirection": "CONTINUE",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 4.3555136,
+                                "stayOn": false,
+                                "absoluteDirection": "NORTH",
+                                "lat": 52.006804900000006,
+                                "exit": null,
+                                "bogusName": true,
+                                "streetName": "steps"
+                            },
+                            {
+                                "distance": 59.08275733330622,
+                                "relativeDirection": "UTURN_RIGHT",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 4.355868200000001,
+                                "stayOn": true,
+                                "absoluteDirection": "SOUTH",
+                                "lat": 52.007174500000005,
+                                "exit": null,
+                                "bogusName": true,
+                                "streetName": "steps"
+                            },
+                            {
+                                "distance": 55.83026761816135,
+                                "relativeDirection": "LEFT",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 4.3559449,
+                                "stayOn": true,
+                                "absoluteDirection": "EAST",
+                                "lat": 52.0069936,
+                                "exit": null,
+                                "bogusName": true,
+                                "streetName": "platform"
+                            }
+                        ],
+                        "mode": "WALK",
+                        "tripBlockId": null,
+                        "endTime": 1380575966000,
+                        "routeTextColor": null
+                    },
+                    {
+                        "transitLeg": true,
+                        "realTime": true,
+                        "alightRule": null,
+                        "headsign": "Dordrecht",
+                        "routeLongName": "Amsterdam Centraal <-> Dordrecht IC2200",
+                        "intermediateStops": null,
+                        "duration": 722000,
+                        "rentedBike": false,
+                        "routeShortName": "Intercity",
+                        "tripId": "3843766",
+                        "agencyUrl": "http://www.ns.nl",
+                        "routeColor": null,
+                        "alerts": null,
+                        "routeId": "2169",
+                        "to": {
+                            "arrival": 1380576689000,
+                            "name": "Rotterdam Centraal",
+                            "platformCode": "6",
+                            "stopSequence": 10,
+                            "lon": 4.46864068508,
+                            "departure": 1380576689000,
+                            "zoneId": "IFF:rtd",
+                            "stopId": {
+                                "id": "53910",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 51.9248002803,
+                            "stopIndex": 9,
+                            "orig": null
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 509,
+                        "notes": null,
+                        "serviceDate": "20130930",
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": "IFF:NS",
+                        "departureDelay": 567,
+                        "startTime": 1380575967000,
+                        "from": {
+                            "arrival": 1380575966000,
+                            "name": "Delft",
+                            "platformCode": "2",
+                            "stopSequence": 8,
+                            "lon": 4.3561783433,
+                            "departure": 1380575967000,
+                            "zoneId": "IFF:dt",
+                            "stopId": {
+                                "id": "54080",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 52.0065262353,
+                            "stopIndex": 7,
+                            "orig": null
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": 2,
+                        "distance": 14159.392637125991,
+                        "agencyName": "NS",
+                        "route": "Intercity",
+                        "tripShortName": "2289",
+                        "legGeometry": {
+                            "length": 45,
+                            "points": "}ol|HkyqYhZoLdF{Bbe@kUlz@e_@nzEstBpgCohA`CqAvAeAxBuBrA_BtAqBlAuBrAoCrGiO`BaEpAwDb@yA^}Av@_Ev@iFhDgVTyBVuCNeCJaCFyC@}CAmCEuCeAe[aK{qCk@}LQsFKsH?yKCaNIeEMyD{Aa_@K_Bo@uGYeFKkAeA}I",
+                            "levels": null
+                        },
+                        "steps": [],
+                        "mode": "RAIL",
+                        "tripBlockId": null,
+                        "endTime": 1380576689000,
+                        "routeTextColor": null
+                    },
+                    {
+                        "transitLeg": false,
+                        "realTime": false,
+                        "alightRule": null,
+                        "headsign": null,
+                        "routeLongName": null,
+                        "intermediateStops": null,
+                        "duration": 39000,
+                        "rentedBike": false,
+                        "routeShortName": null,
+                        "tripId": null,
+                        "agencyUrl": null,
+                        "routeColor": null,
+                        "alerts": null,
+                        "routeId": null,
+                        "to": {
+                            "arrival": 1380576728000,
+                            "name": "Rotterdam Centraal",
+                            "platformCode": "12",
+                            "stopSequence": 1,
+                            "lon": 4.46841537952,
+                            "departure": 1380576899000,
+                            "zoneId": "IFF:rtd",
+                            "stopId": {
+                                "id": "55135",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 51.9252568111,
+                            "stopIndex": 0,
+                            "orig": null
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 0,
+                        "notes": null,
+                        "serviceDate": null,
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": null,
+                        "departureDelay": 0,
+                        "startTime": 1380576689000,
+                        "from": {
+                            "arrival": 1380576689000,
+                            "name": "Rotterdam Centraal",
+                            "platformCode": "6",
+                            "stopSequence": 10,
+                            "lon": 4.46864068508,
+                            "departure": 1380576689000,
+                            "zoneId": "IFF:rtd",
+                            "stopId": {
+                                "id": "53910",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 51.9248002803,
+                            "stopIndex": 9,
+                            "orig": null
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": null,
+                        "distance": 53.06300226689557,
+                        "agencyName": null,
+                        "route": "",
+                        "tripShortName": null,
+                        "legGeometry": {
+                            "length": 2,
+                            "points": "_q|{H_xgZyAl@",
+                            "levels": null
+                        },
+                        "steps": [
+                            {
+                                "distance": 53.06300226689557,
+                                "relativeDirection": "DEPART",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 4.46864068508,
+                                "stayOn": false,
+                                "absoluteDirection": "NORTH",
+                                "lat": 51.9248002803,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Simple Transfer"
+                            }
+                        ],
+                        "mode": "WALK",
+                        "tripBlockId": null,
+                        "endTime": 1380576728000,
+                        "routeTextColor": null
+                    },
+                    {
+                        "transitLeg": true,
+                        "realTime": true,
+                        "alightRule": null,
+                        "headsign": "Amersfoort",
+                        "routeLongName": "Leeuwarden <-> Utrecht Centraal IC12500",
+                        "intermediateStops": null,
+                        "duration": 3541000,
+                        "rentedBike": false,
+                        "routeShortName": "Intercity",
+                        "tripId": "3882289",
+                        "agencyUrl": "http://www.ns.nl",
+                        "routeColor": null,
+                        "alerts": null,
+                        "routeId": "4665",
+                        "to": {
+                            "arrival": 1380580440000,
+                            "name": "Amersfoort",
+                            "platformCode": "1",
+                            "stopSequence": 5,
+                            "lon": 5.37062466145,
+                            "departure": 1380580440000,
+                            "zoneId": "IFF:amf",
+                            "stopId": {
+                                "id": "54645",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 52.1532865868,
+                            "stopIndex": 4,
+                            "orig": null
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 0,
+                        "notes": null,
+                        "serviceDate": "20130930",
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": "IFF:NS",
+                        "departureDelay": -1,
+                        "startTime": 1380576899000,
+                        "from": {
+                            "arrival": 1380576728000,
+                            "name": "Rotterdam Centraal",
+                            "platformCode": "12",
+                            "stopSequence": 1,
+                            "lon": 4.46841537952,
+                            "departure": 1380576899000,
+                            "zoneId": "IFF:rtd",
+                            "stopId": {
+                                "id": "55135",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 51.9252568111,
+                            "stopIndex": 0,
+                            "orig": null
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": 2,
+                        "distance": 67200.78777020794,
+                        "agencyName": "NS",
+                        "route": "Intercity",
+                        "tripShortName": "12589",
+                        "legGeometry": {
+                            "length": 335,
+                            "points": "at|{HqvgZqBkPQkBNjBXtCnDfZrA|LJjAZvFD|AF|GCvHDpBx@nT@vBEhDIzAMtAU|AUlAW`A[`A}@tBm@bAi@p@q@r@m@d@q@^}@^u@NcBNyACkAG}BWkFiA{[cHyBm@_A_@s@]oBuAq@m@qAsAmAaBc@s@y@}A{@qBc@qAk@kBa@aBq@eDYqB_@uDk^ecFoHggAwAgRcEwg@}Dei@e@gIoAuXa@oGaFsq@_BkSyCqa@y@}Mk@aL_@wJUsFmKihDUyFc@qJc@kH_@kFmAqNs@}Gw@aHkBgNeBsKeCaNaCaLuCsLkB}GiAwDoD_LyAeEkBeFiDmIiBgEwBsEoEwIoBmD_C_EmDsFgCqDkBkCcFoG_CoCmCwCgGgGie@sd@qzDa~DkBoBaBkBsCwDaBiCeAiBkCcFaRo`@eC{FuAyDkAsDeA{DcAmEs@oDq@_Ek@gEc@qDUiCqCw\\Y_EUwDOkDIwDGgDAwD@{DFmE|Aqj@HsFjAq`@`@sOToN`M_zEn@mT\\mPfCkaANiKBaJGcIKsGQqGWaGUcEa@eGo@iHs@aHyA{Ku@sEu@cE_A{EqBwIcAwDmAiEyA{EqmCcuIyC}I_BeEuAiDeDiH_DgG_BmCmAmBsBwCuBkCwBeC}C_DofCo_CqGeGkHqHoPgPiTcSkDuD_DwDmBgCeBgCgBqCcByC}AuCmAcCuAcDmBaFq@yBoAoFuGcWgCoKkDwM_v@meDiCyKiJo_@aNul@wGkZcAeFm@mDwAmJaIej@k@gEy@}Hc@eFk@sJMwCWwJGaG?{GDsFN_HvAwb@pA{]~Cw_AfBwd@XwJrB_i@vPueFXeKTwLPyLXmV^eS^qMrBmk@h@sSp@mSLiEPmJfAy\\j@uWvBqo@hAuc@TkH`@_JZyD\\gCj@wCZmAj@gBZ{@lAiCl@_A~@gAbSgR|M{Lu@n@oBzAyKzJq@j@oEtCm@d@cA`Af@k@bEoFaAfAu@l@gDxBu@j@sAnAeAhAwBxCk@l@mA~@o@Zu@XsARwA@oEc@mC_@gCm@aC_AuBiA{BcBqBmB{@eA{@kAcBmCaB_DaJiReB_EuBwF}@sCq@_CoAeFiAuFq@_EwDgWaA{GeGkd@cAsG_M__AsF__@{Fca@eAoG_BqIeDgO}@iEgDeRqCoQaD}QaAyG}h@m|CoE_Xuv@goE{DiTmi@o}Ci@eDa@wCo@qFo@uH[aGQgGGyCCuED}GlJkoGF{HAgIKeHWeI{H{jBc@{H_@{Ea@uDg@yDq@kEy@oEk@kCoCqKmXwdAiAqEe@cCa@qCYwCSsDIuFDoIBqA^cIBiBSyO",
+                            "levels": null
+                        },
+                        "steps": [],
+                        "mode": "RAIL",
+                        "tripBlockId": null,
+                        "endTime": 1380580440000,
+                        "routeTextColor": null
+                    },
+                    {
+                        "transitLeg": false,
+                        "realTime": false,
+                        "alightRule": null,
+                        "headsign": null,
+                        "routeLongName": null,
+                        "intermediateStops": null,
+                        "duration": 101000,
+                        "rentedBike": false,
+                        "routeShortName": null,
+                        "tripId": null,
+                        "agencyUrl": null,
+                        "routeColor": null,
+                        "alerts": null,
+                        "routeId": null,
+                        "to": {
+                            "arrival": 1380580541000,
+                            "name": "Amersfoort, Centraal Station",
+                            "platformCode": "K",
+                            "stopSequence": 0,
+                            "lon": 5.372548,
+                            "departure": 1380581220000,
+                            "zoneId": null,
+                            "stopId": {
+                                "id": "47566",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": "50425070",
+                            "lat": 52.153023,
+                            "stopIndex": 0,
+                            "orig": null
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 0,
+                        "notes": null,
+                        "serviceDate": null,
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": null,
+                        "departureDelay": 0,
+                        "startTime": 1380580440000,
+                        "from": {
+                            "arrival": 1380580440000,
+                            "name": "Amersfoort",
+                            "platformCode": "1",
+                            "stopSequence": 5,
+                            "lon": 5.37062466145,
+                            "departure": 1380580440000,
+                            "zoneId": "IFF:amf",
+                            "stopId": {
+                                "id": "54645",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": null,
+                            "lat": 52.1532865868,
+                            "stopIndex": 4,
+                            "orig": null
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": null,
+                        "distance": 134.4515230956781,
+                        "agencyName": null,
+                        "route": "",
+                        "tripShortName": null,
+                        "legGeometry": {
+                            "length": 2,
+                            "points": "_ei}Hk}w_@r@_K",
+                            "levels": null
+                        },
+                        "steps": [
+                            {
+                                "distance": 134.4515230956781,
+                                "relativeDirection": "DEPART",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 5.37062466145,
+                                "stayOn": false,
+                                "absoluteDirection": "EAST",
+                                "lat": 52.1532865868,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Simple Transfer"
+                            }
+                        ],
+                        "mode": "WALK",
+                        "tripBlockId": null,
+                        "endTime": 1380580541000,
+                        "routeTextColor": null
+                    },
+                    {
+                        "transitLeg": true,
+                        "realTime": false,
+                        "alightRule": null,
+                        "headsign": "Veenendaal Station Centrum",
+                        "routeLongName": "Amersfoort - Wageningen",
+                        "intermediateStops": null,
+                        "duration": 120000,
+                        "rentedBike": false,
+                        "routeShortName": "80",
+                        "tripId": "3289952",
+                        "agencyUrl": "http://www.connexxion.nl",
+                        "routeColor": null,
+                        "alerts": null,
+                        "routeId": "1626",
+                        "to": {
+                            "arrival": 1380581340000,
+                            "name": "Amersfoort, De Kei",
+                            "platformCode": null,
+                            "stopSequence": 5,
+                            "lon": 5.386867,
+                            "departure": 1380581341000,
+                            "zoneId": null,
+                            "stopId": {
+                                "id": "33258",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": "50422540",
+                            "lat": 52.152404,
+                            "stopIndex": 2,
+                            "orig": null
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 0,
+                        "notes": null,
+                        "serviceDate": "20130930",
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": "CXX",
+                        "departureDelay": 0,
+                        "startTime": 1380581220000,
+                        "from": {
+                            "arrival": 1380580541000,
+                            "name": "Amersfoort, Centraal Station",
+                            "platformCode": "K",
+                            "stopSequence": 0,
+                            "lon": 5.372548,
+                            "departure": 1380581220000,
+                            "zoneId": null,
+                            "stopId": {
+                                "id": "47566",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": "50425070",
+                            "lat": 52.153023,
+                            "stopIndex": 0,
+                            "orig": null
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": 3,
+                        "distance": 1039.5901216563554,
+                        "agencyName": "Connexxion",
+                        "route": "80",
+                        "tripShortName": "1075",
+                        "legGeometry": {
+                            "length": 73,
+                            "points": "kci}Hmix_@y@GCe@Ac@Cg@C}@`@q@TG^K@]?kE?}C?sC?OCu@SwAA?FMFOA?EMOc@Us@MYq@yBEQaC}IGW]cAUg@Q_@O_@EKECAEMGSKOGWO}A_AMOCK?ICmACo@C_AAg@Z?D?F?XGpBAh@IRCbBy@VEFPZk@@CXUDKR]Ra@b@}@Xq@N_@Tk@Rm@Po@Lm@Jw@Jk@NY",
+                            "levels": null
+                        },
+                        "steps": [],
+                        "mode": "BUS",
+                        "tripBlockId": null,
+                        "endTime": 1380581340000,
+                        "routeTextColor": null
+                    },
+                    {
+                        "transitLeg": false,
+                        "realTime": false,
+                        "alightRule": null,
+                        "headsign": null,
+                        "routeLongName": null,
+                        "intermediateStops": null,
+                        "duration": 151000,
+                        "rentedBike": false,
+                        "routeShortName": null,
+                        "tripId": null,
+                        "agencyUrl": null,
+                        "routeColor": null,
+                        "alerts": null,
+                        "routeId": null,
+                        "to": {
+                            "arrival": 1380581492000,
+                            "name": "Arnhemseweg",
+                            "platformCode": null,
+                            "stopSequence": null,
+                            "lon": 5.385457016403417,
+                            "departure": null,
+                            "zoneId": null,
+                            "stopId": null,
+                            "stopCode": null,
+                            "lat": 52.15133788184729,
+                            "stopIndex": null,
+                            "orig": ""
+                        },
+                        "boardRule": null,
+                        "arrivalDelay": 0,
+                        "notes": null,
+                        "serviceDate": null,
+                        "interlineWithPreviousLeg": false,
+                        "agencyId": null,
+                        "departureDelay": 0,
+                        "startTime": 1380581341000,
+                        "from": {
+                            "arrival": 1380581340000,
+                            "name": "Amersfoort, De Kei",
+                            "platformCode": null,
+                            "stopSequence": 5,
+                            "lon": 5.386867,
+                            "departure": 1380581341000,
+                            "zoneId": null,
+                            "stopId": {
+                                "id": "33258",
+                                "agencyId": "ARR"
+                            },
+                            "stopCode": "50422540",
+                            "lat": 52.152404,
+                            "stopIndex": 2,
+                            "orig": null
+                        },
+                        "agencyTimeZoneOffset": 7200000,
+                        "routeType": null,
+                        "distance": 180.16874551426847,
+                        "agencyName": null,
+                        "route": "",
+                        "tripShortName": null,
+                        "legGeometry": {
+                            "length": 9,
+                            "points": "o_i}H{b{_@Ip@@F?JCNPf@rC`BCL~@j@",
+                            "levels": null
+                        },
+                        "steps": [
+                            {
+                                "distance": 21.28166890967297,
+                                "relativeDirection": "DEPART",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 5.386867682226341,
+                                "stayOn": false,
+                                "absoluteDirection": "WEST",
+                                "lat": 52.15240812619247,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "way 225809717 from 2"
+                            },
+                            {
+                                "distance": 9.785230923689488,
+                                "relativeDirection": "CONTINUE",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 5.3865726,
+                                "stayOn": false,
+                                "absoluteDirection": "WEST",
+                                "lat": 52.1524404,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Stadsring"
+                            },
+                            {
+                                "distance": 149.10184568090602,
+                                "relativeDirection": "LEFT",
+                                "elevation": [],
+                                "area": false,
+                                "alerts": null,
+                                "lon": 5.386435700000001,
+                                "stayOn": false,
+                                "absoluteDirection": "SOUTHWEST",
+                                "lat": 52.1524665,
+                                "exit": null,
+                                "bogusName": false,
+                                "streetName": "Arnhemseweg"
+                            }
+                        ],
+                        "mode": "WALK",
+                        "tripBlockId": null,
+                        "endTime": 1380581492000,
+                        "routeTextColor": null
+                    }
+                ],
+                "walkDistance": 1002.7951344328909,
+                "tooSloped": false,
+                "walkLimitExceeded": true,
+                "waitingTime": 852,
+                "elevationLost": 0,
+                "monitorId": "49e01a65f60676e4f40545d5a3e2879f0de03f43",
+                "elevationGained": 0,
+                "startTime": 1380575448000,
+                "transfers": 2,
+                "duration": 6044000,
+                "transitTime": 4383,
+                "endTime": 1380581492000
+            }
+        ],
+        "from": {
+            "arrival": null,
+            "name": "Pootstraat",
+            "platformCode": null,
+            "stopSequence": null,
+            "lon": 4.3506851524691585,
+            "departure": null,
+            "zoneId": null,
+            "stopId": null,
+            "stopCode": null,
+            "lat": 52.00509669072431,
+            "stopIndex": null,
+            "orig": null
+        }
+    },
+    "requestParameters": {
+        "arriveBy": "False",
+        "maxWalkDistance": "750",
+        "date": "2013-09-30",
+        "mode": "TRANSIT,WALK",
+        "showIntermediateStops": "False",
+        "time": "23:10:21.953332",
+        "fromPlace": "52.005173970555695,4.350585937499999",
+        "toPlace": "52.15118665954508,5.386047363281249"
+    },
+    "error": null
+}

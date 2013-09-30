@@ -45,7 +45,7 @@ First start the monitoring service::
 
     tripmonitor-client monitor
     
-The updates are sent in the same format as the planning results:
+The updates are sent in the same format as the planning results::
   
     An example JSON can be found in ``response_example.json``.
 

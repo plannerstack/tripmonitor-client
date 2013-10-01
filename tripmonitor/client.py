@@ -8,6 +8,7 @@ import argparse
 from base64 import b64encode
 from ConfigParser import ConfigParser, NoSectionError
 import json
+import simplejson
 import logging
 import os
 import sys
@@ -47,7 +48,37 @@ def plan(options, config):
     r = requests.get(url, params=params,
             auth=(config['username'], config['password']))
     r.raise_for_status()
-    print(r.text)
+    result = r.json()
+    print_result(result)
+
+def print_result(result):
+    print (result)
+    if result['plan'] is None:
+        print('\nSomething went wrong while planning this trip\n')
+        return
+    print('\nTrip from %s to %s\nMonitorId - %s' % ( \
+            str(result['plan']['from']['name']), \
+            str(result['plan']['to']['name']), \
+            str(result['plan']['itineraries'][0]['monitorId']) \
+        ) \
+    )
+    print('\n\t\t\tLegs:')
+    for leg in result['plan']['itineraries'][0]['legs']:
+        print('%s:\n\tFrom %s @ %s (delayed - %s)\n\tTo %s @ %s (delayed - %s)' % ( \
+                str(leg['mode']), \
+                str(leg['from']['name']), \
+                str(ts2datetime(leg['from']['departure'])), \
+                str(leg['departureDelay']), \
+                str(leg['to']['name']), \
+                str(ts2datetime(leg['to']['arrival'])), \
+                str(leg['arrivalDelay']) \
+            )
+        )
+    print('\n')
+
+
+def ts2datetime(ts):
+    return datetime.fromtimestamp(ts/1000)
 
 
 def subscribe(options, config):
@@ -81,6 +112,8 @@ def monitor(options, config):
     while True:
         notification = notifications_zmq.recv()
         print(notification)
+        notification = simplejson.loads(notification)
+        print_result(notification)
 
 def parse_args(args=None):
     parser = argparse.ArgumentParser(

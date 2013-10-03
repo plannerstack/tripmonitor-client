@@ -24,5 +24,6 @@ setup(
         'websocket-client',
         'pyzmq',
         'simplejson',
+        'python-dateutil',
     ],
 )

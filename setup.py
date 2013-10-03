@@ -23,5 +23,6 @@ setup(
         'requests',
         'websocket-client',
         'pyzmq',
+        'simplejson',
     ],
 )
